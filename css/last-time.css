@@ -1,0 +1,81 @@
+/* last-time.css - "One Last Time" with its Paintings and Songs sub-pages */
+
+.c-wine { color: var(--wine); }
+.c-teal { color: var(--teal); }
+
+.last {
+  min-height: calc(100vh - 80px);
+  min-height: calc(100dvh - 80px);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(28px, 6vw, 70px) var(--gutter) 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(22px, 4vw, 40px);
+}
+
+.tabs {
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(255, 252, 248, 0.85);
+  border: 1px solid var(--line);
+  box-shadow: 0 14px 30px -24px rgba(42, 42, 45, 0.6);
+}
+.tabs button {
+  padding: 0.65em 2em;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--coffee);
+  font-size: 0.85rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+.tabs button:hover { background: var(--lavender-soft); }
+.tabs button[aria-selected="true"] { background: var(--coffee); color: var(--paper); }
+
+.panel {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: clamp(30px, 8vw, 80px) 0;
+  animation: rise 0.7s cubic-bezier(0.2, 0.8, 0.25, 1) both;
+}
+.panel[hidden] { display: none; }
+
+.panel__title {
+  font-size: clamp(2.4rem, 8vw, 5rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.soon {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(2.8rem, 12vw, 8rem);
+  line-height: 1;
+  color: var(--coffee);
+}
+.soon::after {
+  content: "";
+  display: block;
+  width: min(220px, 40%);
+  height: 2px;
+  margin: 26px auto 0;
+  background: linear-gradient(90deg, transparent, var(--lavender), transparent);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: none; }
+}
