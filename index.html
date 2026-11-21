@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>The Vault</title>
+  <meta name="description" content="A private little corner of the internet.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f8f2ea">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="login-body">
+  <noscript><div class="noscript-msg">The vault needs JavaScript switched on to open.</div></noscript>
+
+  <img class="sprig sprig--left" src="images/decor/sprig.svg" alt="" aria-hidden="true">
+  <img class="sprig sprig--right" src="images/decor/sprig.svg" alt="" aria-hidden="true">
+
+  <main class="page login" id="login-page">
+    <p class="eyebrow">The Vault</p>
+    <h1 class="login__title">
+      Please enter your <em>name</em> and your <em>access token</em> to get granted access to the vault.
+    </h1>
+
+    <form id="login-form" class="login-card" autocomplete="off" novalidate>
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="visitor-name" type="text" inputmode="text" autocomplete="off"
+               autocapitalize="words" spellcheck="false" placeholder="Your name" required>
+      </div>
+
+      <div class="field">
+        <label for="token">Access token</label>
+        <div class="field__row">
+          <input id="token" name="vault-token" type="password" autocomplete="new-password"
+                 autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="8 characters" required>
+          <button type="button" id="toggle-token" class="field__toggle" aria-label="Show access token" aria-pressed="false">Show</button>
+        </div>
+      </div>
+
+      <p id="form-hint" class="hint" role="status" aria-live="polite"></p>
+
+      <button type="submit" id="submit" class="pill-btn">Enter the vault</button>
+    </form>
+  </main>
+
+  <!-- Welcome window (shown after a verified token) -->
+  <div class="modal-backdrop" id="welcome-modal" hidden>
+    <div class="modal modal--welcome" role="dialog" aria-modal="true" aria-labelledby="welcome-title">
+      <div class="modal__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-9.2-9.2C1.2 8.4 3 5 6.4 5c2 0 3.5 1.1 4.3 2.6h2.6C14.100 6.100 15.600 5 17.600 5 21 5 22.800 8.400 21.200 11.800 19 16.400 12 21 12 21z"/></svg>
+      </div>
+      <h2 id="welcome-title"></h2>
+      <p class="welcome-sub">We’ll be redirecting you to the vault soon</p>
+      <div class="progress" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+
+  <!-- Access denied window -->
+  <div class="modal-backdrop" id="denied-modal" hidden>
+    <div class="modal modal--denied" role="alertdialog" aria-modal="true" aria-labelledby="denied-title" aria-describedby="denied-text">
+      <div class="modal__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.500 3v5.500c0 4.500-3 8-7.500 9.500C7.500 19.500 4.500 16 4.500 11.500V6L12 3z"/><path d="M9.200 9.200l5.600 5.600M14.800 9.200l-5.600 5.600"/></svg>
+      </div>
+      <h2 id="denied-title">Access denied</h2>
+      <p id="denied-text">You do not have permission to enter the vault. Please double-check your access token to make sure it was entered correctly and try again. If it still does not work, you do not have access to the vault.</p>
+      <button type="button" class="pill-btn" id="denied-close">Try again</button>
+    </div>
+  </div>
+
+  <script src="js/auth-data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

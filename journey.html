@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Journey So Far</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f8f2ea">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/journey.css">
+  <!-- Visitors without a verified token are sent back to the security page -->
+  <script src="js/auth-data.js"></script>
+  <script src="js/auth.js"></script>
+  <script>Vault.guard();</script>
+</head>
+<body>
+  <noscript><div class="noscript-msg">This page needs JavaScript switched on.</div></noscript>
+  <img class="sprig sprig--left" src="images/decor/sprig.svg" alt="" aria-hidden="true">
+  <img class="sprig sprig--right" src="images/decor/sprig.svg" alt="" aria-hidden="true">
+
+  <header id="site-nav" data-active="journey"></header>
+
+  <main class="page journey">
+
+    <!-- ===== Hero: birthday + today ===== -->
+    <section class="hero">
+      <p class="eyebrow">Journey So Far</p>
+      <p class="hero__born">Born on</p>
+      <h1 class="hero__date">
+        <span class="c-wine">November</span>
+        <span class="c-coffee num">22</span><span class="c-teal">,&nbsp;2006</span>
+      </h1>
+      <p class="hero__today">Today is <strong id="today">&nbsp;</strong></p>
+      <p class="hero__birthday" id="birthday-banner" hidden>Happy Birthday!</p>
+    </section>
+
+    <!-- ===== Age, to the millisecond ===== -->
+    <section class="age" aria-labelledby="age-title">
+      <h2 id="age-title" class="age__title">Full age</h2>
+      <div class="age__grid">
+        <div class="age__cell"><b class="num" id="age-y">0</b><span>years</span></div>
+        <div class="age__cell"><b class="num" id="age-mo">0</b><span>months</span></div>
+        <div class="age__cell"><b class="num" id="age-d">0</b><span>days</span></div>
+        <div class="age__cell"><b class="num" id="age-h">0</b><span>hours</span></div>
+        <div class="age__cell"><b class="num" id="age-mi">0</b><span>minutes</span></div>
+        <div class="age__cell"><b class="num" id="age-s">0</b><span>seconds</span></div>
+        <div class="age__cell age__cell--ms"><b class="num" id="age-ms">000</b><span>milliseconds</span></div>
+      </div>
+    </section>
+
+    <!-- ===== Live counters ===== -->
+    <section class="stats" aria-label="Counters since birth">
+
+      <article class="stat stat--wine">
+        <h3>Heartbeats since birth <i class="est" title="Estimate">≈</i></h3>
+        <p class="stat__value num" id="s-heart">0</p>
+        <p class="stat__note">Based on average resting heart rates for each age.</p>
+      </article>
+
+      <article class="stat stat--teal">
+        <h3>Breaths taken since birth <i class="est" title="Estimate">≈</i></h3>
+        <p class="stat__value num" id="s-breath">0</p>
+        <p class="stat__note">Based on average breathing rates for each age.</p>
+      </article>
+
+      <article class="stat stat--lavender">
+        <h3>Songs released since birth <i class="est" title="Estimate">≈</i></h3>
+        <p class="stat__value num" id="s-songs">0</p>
+        <p class="stat__note">New tracks delivered to music services worldwide.</p>
+      </article>
+
+      <article class="stat stat--wine">
+        <h3>YouTube videos uploaded since birth <i class="est" title="Estimate">≈</i></h3>
+        <p class="stat__value num" id="s-videos">0</p>
+        <p class="stat__note">Videos added to YouTube, all over the world.</p>
+      </article>
+
+      <article class="stat stat--coffee stat--wide">
+        <h3>US presidential elections since birth</h3>
+        <p class="stat__value num" id="s-elections">0</p>
+        <ul class="chips" id="election-chips"></ul>
+        <p class="president">
+          <span>Current president</span>
+          <strong id="president-now">&nbsp;</strong>
+          <em id="president-birth"></em>
+        </p>
+      </article>
+
+      <article class="stat stat--green">
+        <h3>Times Earth has gone around the Sun</h3>
+        <p class="stat__value num" id="s-earth">0</p>
+        <p class="stat__note">One lap takes about 365.256 days.</p>
+      </article>
+
+      <article class="stat stat--wine">
+        <h3>Times Venus has gone around the Sun</h3>
+        <p class="stat__value num" id="s-venus">0</p>
+        <p class="stat__note">One Venus year is only about 224.7 Earth days.</p>
+      </article>
+
+      <article class="stat stat--teal">
+        <h3>Light years the Solar System has travelled through the Milky Way</h3>
+        <p class="stat__value num" id="s-sun-ly">0</p>
+        <p class="stat__note">That is about <span class="num" id="s-sun-km">0</span> km, at roughly 230 km every second.</p>
+      </article>
+
+      <article class="stat stat--lavender">
+        <h3>Light years the Milky Way has travelled through the universe</h3>
+        <p class="stat__value num" id="s-mw-ly">0</p>
+        <p class="stat__note">About <span class="num" id="s-mw-km">0</span> km, at roughly 552 km every second.</p>
+      </article>
+
+      <article class="stat stat--green">
+        <h3>New stars born since birth <i class="est" title="Estimate">≈</i></h3>
+        <p class="stat__value num" id="s-stars">0</p>
+        <p class="stat__note">Across the whole observable universe.</p>
+      </article>
+
+      <article class="stat stat--coffee">
+        <h3>New planets born since birth <i class="est" title="Estimate">≈</i></h3>
+        <p class="stat__value num" id="s-planets">0</p>
+        <p class="stat__note">Across the whole observable universe.</p>
+      </article>
+
+      <article class="stat stat--teal stat--wide">
+        <h3>New solar systems formed since birth <i class="est" title="Estimate">≈</i></h3>
+        <p class="stat__value num" id="s-systems">0</p>
+        <p class="stat__note">Stars that gathered their own family of planets.</p>
+      </article>
+
+      <article class="stat stat--wine stat--wide">
+        <h3>Solar and lunar eclipses since birth</h3>
+        <div class="duo">
+          <div><b class="num" id="s-solar">0</b><span>solar eclipses</span></div>
+          <div><b class="num" id="s-lunar">0</b><span>lunar eclipses</span></div>
+        </div>
+        <p class="stat__note" id="eclipse-next"></p>
+      </article>
+    </section>
+
+    <!-- ===== The day itself ===== -->
+    <section class="day" aria-labelledby="day-title">
+      <p class="eyebrow">2006 · 11 · 22</p>
+      <h2 id="day-title">On the day it all began</h2>
+      <div class="day__cols">
+        <div>
+          <h3>Up in the sky</h3>
+          <ul>
+            <li>The Moon was a razor-thin waxing crescent, only about 2% lit and just over a day past New Moon.</li>
+            <li>Mercury had slipped across the face of the Sun two weeks earlier, on November 8.</li>
+            <li>The Chinese zodiac was in the Year of the Dog.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Around the world</h3>
+          <ul>
+            <li>It was a Wednesday, the eve of Thanksgiving in the United States.</li>
+            <li>The Isle of Man went to the polls in a general election for the House of Keys.</li>
+            <li>India said goodbye to Asima Chatterjee, a pioneering chemist.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <p class="more">Many more will come…</p>
+
+    <p class="footnote"><i class="est">≈</i> marks a scientific estimate rather than an exact count. Eclipses, orbits and distances are calculated.</p>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/journey.js"></script>
+</body>
+</html>

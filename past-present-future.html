@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Past Present Future</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f8f2ea">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/stills.css">
+  <script src="js/auth-data.js"></script>
+  <script src="js/auth.js"></script>
+  <script>Vault.guard();</script>
+</head>
+<body>
+  <noscript><div class="noscript-msg">This page needs JavaScript switched on.</div></noscript>
+  <img class="sprig sprig--left" src="images/decor/sprig.svg" alt="" aria-hidden="true">
+  <img class="sprig sprig--right" src="images/decor/sprig.svg" alt="" aria-hidden="true">
+
+  <header id="site-nav" data-active="stills"></header>
+
+  <main class="page theatre">
+    <header class="theatre__head">
+      <p class="eyebrow">Now showing soon</p>
+      <h1>Past <span class="c-wine">Present</span> <span class="c-teal">Future</span></h1>
+      <p class="bubble" role="note">Click each one to take a first look</p>
+    </header>
+
+    <section class="films" aria-label="Upcoming films">
+
+      <article class="film" data-slot="2700bce">
+        <button type="button" class="film__poster film__poster--past" aria-haspopup="dialog"
+                aria-label="2700 BCE – Heladvipa. Locked. Click to take a first look.">
+          <img class="film__thumb" src="images/stills/2700bcestill1.png" alt="" loading="lazy" draggable="false">
+          <span class="film__shade" aria-hidden="true"></span>
+          <span class="film__badge">Locked</span>
+          <span class="film__lock" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.500" y="10.500" width="15" height="10" rx="2.500"/><path d="M8 10.500V7.500a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.500" r="1.100" fill="currentColor"/></svg>
+          </span>
+          <span class="film__title">2700 BCE – Heladvipa</span>
+        </button>
+        <div class="film__meta">
+          <p class="film__unlock">Unlocks on November 22 · 00:00</p>
+          <div class="countdown num" data-countdown>
+            <span><b data-u="d">000</b><i>days</i></span>
+            <span><b data-u="h">00</b><i>hours</i></span>
+            <span><b data-u="m">00</b><i>minutes</i></span>
+            <span><b data-u="s">00</b><i>seconds</i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="film" data-slot="2140ace">
+        <button type="button" class="film__poster film__poster--future" aria-haspopup="dialog"
+                aria-label="2140 ACE – New York. Locked. Click to take a first look.">
+          <img class="film__thumb" src="images/stills/2140acestill1.png" alt="" loading="lazy" draggable="false">
+          <span class="film__shade" aria-hidden="true"></span>
+          <span class="film__badge">Locked</span>
+          <span class="film__lock" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.500" y="10.500" width="15" height="10" rx="2.500"/><path d="M8 10.500V7.500a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.500" r="1.100" fill="currentColor"/></svg>
+          </span>
+          <span class="film__title">2140 ACE – New York</span>
+        </button>
+        <div class="film__meta">
+          <p class="film__unlock">Unlocks on November 22 · 00:00</p>
+          <div class="countdown num" data-countdown>
+            <span><b data-u="d">000</b><i>days</i></span>
+            <span><b data-u="h">00</b><i>hours</i></span>
+            <span><b data-u="m">00</b><i>minutes</i></span>
+            <span><b data-u="s">00</b><i>seconds</i></span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/stills.js"></script>
+</body>
+</html>

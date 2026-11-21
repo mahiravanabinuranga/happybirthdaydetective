@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>One Last Time</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f8f2ea">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/last-time.css">
+  <script src="js/auth-data.js"></script>
+  <script src="js/auth.js"></script>
+  <script>Vault.guard();</script>
+</head>
+<body>
+  <noscript><div class="noscript-msg">This page needs JavaScript switched on.</div></noscript>
+  <img class="sprig sprig--left" src="images/decor/sprig.svg" alt="" aria-hidden="true">
+  <img class="sprig sprig--right" src="images/decor/sprig.svg" alt="" aria-hidden="true">
+
+  <header id="site-nav" data-active="last"></header>
+
+  <main class="page last">
+    <p class="eyebrow">One Last Time</p>
+
+    <div class="tabs" role="tablist" aria-label="One Last Time sections">
+      <button type="button" role="tab" id="tab-paintings" aria-controls="panel-paintings" aria-selected="true" data-tab="paintings">Paintings</button>
+      <button type="button" role="tab" id="tab-songs" aria-controls="panel-songs" aria-selected="false" data-tab="songs" tabindex="-1">Songs</button>
+    </div>
+
+    <section class="panel" id="panel-paintings" role="tabpanel" aria-labelledby="tab-paintings">
+      <h1 class="panel__title c-wine">Paintings</h1>
+      <p class="soon">Coming soon</p>
+    </section>
+
+    <section class="panel" id="panel-songs" role="tabpanel" aria-labelledby="tab-songs" hidden>
+      <h1 class="panel__title c-teal">Songs</h1>
+      <p class="soon">Coming soon</p>
+    </section>
+  </main>
+
+  <script src="js/nav.js"></script>
+  <script src="js/last-time.js"></script>
+</body>
+</html>
